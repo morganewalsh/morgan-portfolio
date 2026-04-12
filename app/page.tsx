@@ -8,7 +8,7 @@ const skills = [
   { cat: 'Data',     items: 'Python · SQL · Rust · Power BI · geospatial' },
   { cat: 'Design',   items: 'Figma · Framer · UX research · Adobe CC'     },
   { cat: 'Strategy', items: 'Brand · market research · campaign · comms'  },
-  { cat: 'Writing',  items: 'Journalism · data storytelling · editorial'   },
+  { cat: 'Language', items: 'Spanish'  },
 ]
 
 const projects = [
@@ -39,17 +39,9 @@ const projects = [
 ]
 
 const facts = [
-  'Marathon runner, training for ultras',
-  'Guitarist · fencer · journalist',
-  'Spanish · Arabic · Python',
+  'BU Run Club — Social Chair',
   'Code for Boston member',
-]
-
-const stats = [
-  { n: '3.47', l: 'GPA'               },
-  { n: '17+',  l: 'Articles published' },
-  { n: '3',    l: 'Marathons'          },
-  { n: '6+',   l: 'Technical skills'   },
+  'Guitarist',
 ]
 
 export default function Home() {
@@ -86,8 +78,8 @@ export default function Home() {
           </h1>
 
           <p className="text-body" style={{ maxWidth: 440, marginBottom: '1.5rem' }}>
-            Now I work at the intersection of data and design, building things
-            that help people understand the systems shaping their lives.
+            Now I work with data and design to turn complex problems into
+            stories that are easy to understand and solve.
           </p>
 
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -182,16 +174,17 @@ export default function Home() {
           {/* Bio */}
           <div>
             <p className="text-body" style={{ marginBottom: '0.75rem' }}>
-              I&apos;m a designer and analyst finishing a degree in Advertising
-              with a Data Science minor at Boston University — a year early. I
-              came to this work through journalism: writing about local
-              government at 16 taught me to find the story before I could
-              visualize it.
+              I&apos;m a designer and analyst finishing a degree in advertising
+              with a data science minor at Boston University. I began thinking about
+              how stories shape our communities through journalism: writing about
+              my local government at 15 taught me how to find a story before I knew 
+              how to visualize it.
             </p>
             <p className="text-body">
               I care about the places where people&apos;s relationship with the
-              world gets designed — climate infrastructure, public space, civic
-              data. That&apos;s where I&apos;m headed.
+              world gets designed, and, admittedly, finding the perfect font for 
+              every occasion. How we communicate, and what it looks like,
+              really does matter. 
             </p>
             <div style={{ marginTop: '1rem' }}>
               {facts.map(f => (
@@ -224,75 +217,52 @@ export default function Home() {
           {/* Resume card */}
           <div
             style={{
-              background: 'var(--bg-secondary)',
-              border:     '1px solid var(--border)',
-              padding:    '1.25rem',
-              display:    'flex',
+              background:    'var(--bg-secondary)',
+              border:        '1px solid var(--border)',
+              display:       'flex',
               flexDirection: 'column',
-              gap:        '1rem',
+              height:        '100%',
+              minHeight:     400,
             }}
           >
-            <div>
-              <div
-                className="text-label"
-                style={{ marginBottom: '0.5rem', color: 'var(--green)' }}
-              >
-                Résumé
-              </div>
-              <div
-                className="text-heading-sm"
-                style={{ fontFamily: 'var(--font-serif)' }}
-              >
-                Morgan E. Walsh
-              </div>
-              <div
-                className="text-body-sm"
-                style={{ marginTop: 2, color: 'var(--text-muted)' }}
-              >
-                Advertising · Data Science · Boston, MA
-              </div>
-            </div>
-
-            <div style={{ height: 1, background: 'var(--border)' }} />
-
             <div
-              className="grid-1px"
-              style={{ gridTemplateColumns: '1fr 1fr' }}
+              style={{
+                padding:        '0.75rem 1rem',
+                borderBottom:   '1px solid var(--border)',
+                display:        'flex',
+                justifyContent: 'space-between',
+                alignItems:     'center',
+              }}
             >
-              {stats.map(s => (
-                <div
-                  key={s.l}
-                  style={{ background: 'var(--bg-secondary)', padding: '0.75rem' }}
-                >
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize:   '1.375rem',
-                      fontWeight: 400,
-                      color:      'var(--green)',
-                    }}
-                  >
-                    {s.n}
-                  </div>
-                  <div
-                    className="text-body-sm"
-                    style={{ marginTop: 2, color: 'var(--text-muted)' }}
-                  >
-                    {s.l}
-                  </div>
+              <div>
+                <div className="text-label" style={{ color: 'var(--green)', marginBottom: 2 }}>
+                  Résumé
                 </div>
-              ))}
+                <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1rem', color: 'var(--text-primary)' }}>
+                  Morgan E. Walsh
+                </div>
+              </div><a
+                href="/resume.pdf"
+                download
+                className="btn btn-primary"
+                style={{ fontSize: '0.75rem', padding: '6px 14px' }}
+              >
+                Download ↓
+              </a>
             </div>
-
-            <a
-              href="/resume.pdf"
-              download
-              className="btn btn-primary"
-              style={{ textAlign: 'center', justifyContent: 'center' }}
-            >
-              Download résumé ↓
-            </a>
+            <iframe
+              src="/resume.pdf"
+              style={{
+                flex:      1,
+                width:     '100%',
+                minHeight: 340,
+                border:    'none',
+                background: 'var(--bg-secondary)',
+              }}
+              title="Morgan Walsh résumé"
+            />
           </div>
+
         </div>
       </section>
 
@@ -315,14 +285,11 @@ export default function Home() {
         >
           Let&apos;s build something worth building.
         </h2>
-        <p
-          className="text-body"
-          style={{ maxWidth: 400, marginBottom: '1.25rem' }}
-        >
-          Looking for civic design and green-tech roles in Boston starting
-          September 2026. If you&apos;re working on something that matters,
-          I want to hear about it.
-        </p>
+        <p className="text-body" style={{ maxWidth: 400, marginBottom: '1.25rem' }}>
+          Looking for product design and data roles in Boston starting 
+          summer 2026. I&apos;m interested in teams building things that are 
+          genuinely worth understanding.
+          </p>
 
         {/* Simple mailto form — swap for a real form handler when ready */}
         <div

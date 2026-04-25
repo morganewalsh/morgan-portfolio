@@ -2,13 +2,73 @@
 
 import Link from 'next/link'
 
+const IconTarget = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="16" r="12" />
+    <circle cx="16" cy="16" r="6" />
+    <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none" />
+    <line x1="16" y1="4" x2="16" y2="1" />
+    <line x1="16" y1="28" x2="16" y2="31" />
+    <line x1="4" y1="16" x2="1" y2="16" />
+    <line x1="28" y1="16" x2="31" y2="16" />
+  </svg>
+)
+
+const IconInsight = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="13" r="8" />
+    <line x1="12" y1="24" x2="20" y2="24" />
+    <line x1="13" y1="27" x2="19" y2="27" />
+    <line x1="16" y1="5" x2="16" y2="2" />
+    <line x1="24" y1="8" x2="26" y2="6" />
+    <line x1="8" y1="8" x2="6" y2="6" />
+  </svg>
+)
+
+const IconMessage = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="2" y="6" width="28" height="18" rx="1" />
+    <polyline points="2,6 16,17 30,6" />
+  </svg>
+)
+
+const IconRole = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="10" r="5" />
+    <path d="M4 26c0-6.627 5.373-12 12-12s12 5.373 12 12" />
+  </svg>
+)
+
+const sections = [
+  {
+    Icon:  IconTarget,
+    label: 'The Target',
+    text:  "Women 18–29 who consume true crime daily while multitasking — driven by empathy, not morbidity, and 3.6x more likely to donate to related causes than the average listener.",
+  },
+  {
+    Icon:  IconInsight,
+    label: 'The Insight',
+    text:  "People turn to true crime to make the unknown feel more understandable. Heavy stories become more digestible when the moment itself feels simple.",
+  },
+  {
+    Icon:  IconMessage,
+    label: 'Key Message',
+    text:  "Rold Gold is bite-sized, mess-free, and familiar — the snack that stays out of the way so the story can stay in the foreground.",
+  },
+  {
+    Icon:  IconRole,
+    label: 'My Role',
+    text:  "Subculture analysis, myth/reality audit, target profiling, insight development, brief writing, and media channel strategy.",
+  },
+]
+
 export default function RoldGoldPage() {
   return (
     <>
       {/* ── Header ───────────────────────────────────────────────────── */}
       <section
         style={{
-          padding:      '4rem 2rem 2rem',
+          padding:      '4rem 2rem 2.5rem',
           maxWidth:     'var(--max-width)',
           margin:       '0 auto',
           borderBottom: '1px solid var(--border)',
@@ -21,99 +81,95 @@ export default function RoldGoldPage() {
         >
           ← Strategy
         </Link>
-        <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.5rem' }}>
-          Case 03 · Rold Gold
-        </div>
-        <h1
-          className="text-display"
-          style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.75rem' }}
-        >
-          True Crime Subculture
-        </h1>
-        <p className="text-body" style={{ maxWidth: 560, color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-          Subculture Research · Consumer Insight · Creative Brief
-        </p>
 
-        {/* Meta grid */}
-        <div className="grid-1px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
-          {[
-            { label: 'Client',      value: 'Rold Gold' },
-            { label: 'My Role',     value: 'Subculture analysis · Target profiling · Insight development · Brief writing' },
-            { label: 'Method',      value: 'Desk research · Myth/reality audit · Edison & Pew data' },
-            { label: 'Deliverable', value: 'Creative brief + media channel strategy + new flavor concept' },
-          ].map(m => (
-            <div key={m.label} className="grid-cell" style={{ padding: '1rem' }}>
-              <div className="text-label" style={{ color: 'var(--text-muted)', marginBottom: '0.25rem' }}>{m.label}</div>
-              <div className="text-body-sm" style={{ color: 'var(--text-primary)' }}>{m.value}</div>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+          <div>
+            <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.4rem' }}>
+              Case 03 · Rold Gold
+            </div>
+            <h1
+              className="text-display"
+              style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}
+            >
+              True Crime Subculture
+            </h1>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+              {['Subculture Research', 'Consumer Insight', 'Creative Brief'].map(t => (
+                <span
+                  key={t}
+                  className="text-label"
+                  style={{ background: 'var(--bg-secondary)', padding: '2px 8px', color: 'var(--text-muted)' }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div
+            style={{
+              width:      120,
+              height:     80,
+              background: '#E8E0F0',
+              border:     '1px solid var(--border)',
+              flexShrink: 0,
+            }}
+          />
+        </div>
+      </section>
+
+      {/* ── Icon sections ────────────────────────────────────────────── */}
+      <section
+        style={{
+          maxWidth:     'var(--max-width)',
+          margin:       '0 auto',
+          padding:      '2.5rem 2rem',
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        <div
+          className="grid-1px"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}
+        >
+          {sections.map(({ Icon, label, text }) => (
+            <div key={label} className="grid-cell" style={{ padding: '1.25rem' }}>
+              <div style={{ color: 'var(--green)', marginBottom: '0.6rem' }}>
+                <Icon />
+              </div>
+              <div className="text-label" style={{ color: 'var(--text-muted)', marginBottom: '0.4rem' }}>
+                {label}
+              </div>
+              <p className="text-body" style={{ color: 'var(--text-secondary)' }}>
+                {text}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── Write-up ─────────────────────────────────────────────────── */}
+      {/* ── Pull quote ───────────────────────────────────────────────── */}
       <section
         style={{
           maxWidth:     'var(--max-width)',
           margin:       '0 auto',
-          padding:      '3rem 2rem',
+          padding:      '2.5rem 2rem',
           borderBottom: '1px solid var(--border)',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
-          <div>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>The Subculture</div>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              True crime is one of the most misunderstood audiences in media. The stereotypes — morbid, passive, disengaged — are wrong. 89% of weekly podcast listeners have binged true crime. 77% prefer victim-centered content. They are 3.6x more likely to donate to related causes than the average listener.
-            </p>
-            <p className="text-body" style={{ color: 'var(--text-secondary)' }}>
-              Our target: women 18–29 who consume true crime daily while multitasking. Driven by empathy and a desire to make sense of injustice. Habitual, ritual listeners — not passive consumers.
-            </p>
-          </div>
-          <div>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>The Insight</div>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              People turn to true crime to make the unknown feel more understandable. The content is heavy, emotionally demanding, and immersive. What they need alongside it isn&apos;t stimulation — it&apos;s grounding.
-            </p>
-            <p
-              style={{
-                fontFamily:  'var(--font-serif)',
-                fontSize:    '1.1rem',
-                color:       'var(--green)',
-                fontStyle:   'italic',
-                borderLeft:  '2px solid var(--green)',
-                paddingLeft: '1rem',
-              }}
-            >
-              Heavy stories become more digestible when the moment itself feels simple.
-            </p>
-          </div>
-        </div>
-
-        {/* Brief summary */}
-        <div
+        <p
           style={{
-            marginTop:  '2rem',
-            background: 'var(--bg-secondary)',
-            border:     '1px solid var(--border)',
-            padding:    '1.5rem',
+            fontFamily: 'var(--font-serif)',
+            fontSize:   'clamp(1.25rem, 3vw, 1.75rem)',
+            color:      'var(--text-primary)',
+            maxWidth:   640,
+            lineHeight: 1.4,
+            fontStyle:  'italic',
           }}
         >
-          <div className="section-label" style={{ marginBottom: '1rem' }}>The Brief</div>
-          <div className="grid-1px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-            {[
-              { label: 'Goal',             value: 'Make Rold Gold the snack of choice for the true crime subculture.' },
-              { label: 'Target',           value: 'Women 18–29. Habitual true crime listeners who consume daily while multitasking, commuting, or winding down.' },
-              { label: 'Consumer Problem', value: 'True crime enthusiasts seek a snack that offers comfort and familiarity to balance the intensity of the content.' },
-              { label: 'Desired Action',   value: 'Think: "Rold Gold is my ultimate comfort snack." Do: make it part of the true crime ritual.' },
-              { label: 'Key Message',      value: 'Heavy stories become more digestible when the moment feels simple. Rold Gold is the snack that stays out of the way.' },
-            ].map(b => (
-              <div key={b.label} className="grid-cell" style={{ padding: '1rem' }}>
-                <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.25rem' }}>{b.label}</div>
-                <p className="text-body-sm" style={{ color: 'var(--text-secondary)' }}>{b.value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+          &ldquo;Heavy stories become more digestible when the moment feels simple.&rdquo;
+        </p>
+        <p className="text-label" style={{ color: 'var(--text-muted)', marginTop: '0.75rem' }}>
+          Strategic insight
+        </p>
       </section>
 
       {/* ── Embedded Deck ────────────────────────────────────────────── */}
@@ -121,10 +177,10 @@ export default function RoldGoldPage() {
         style={{
           maxWidth: 'var(--max-width)',
           margin:   '0 auto',
-          padding:  '3rem 2rem',
+          padding:  '2.5rem 2rem',
         }}
       >
-        <div className="section-label" style={{ marginBottom: '1.5rem' }}>Full presentation</div>
+        <div className="section-label" style={{ marginBottom: '1.25rem' }}>Full presentation</div>
         <div
           style={{
             position:   'relative',

@@ -2,13 +2,73 @@
 
 import Link from 'next/link'
 
+const IconTarget = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="16" r="12" />
+    <circle cx="16" cy="16" r="6" />
+    <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none" />
+    <line x1="16" y1="4" x2="16" y2="1" />
+    <line x1="16" y1="28" x2="16" y2="31" />
+    <line x1="4" y1="16" x2="1" y2="16" />
+    <line x1="28" y1="16" x2="31" y2="16" />
+  </svg>
+)
+
+const IconInsight = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="13" r="8" />
+    <line x1="12" y1="24" x2="20" y2="24" />
+    <line x1="13" y1="27" x2="19" y2="27" />
+    <line x1="16" y1="5" x2="16" y2="2" />
+    <line x1="24" y1="8" x2="26" y2="6" />
+    <line x1="8" y1="8" x2="6" y2="6" />
+  </svg>
+)
+
+const IconMessage = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="2" y="6" width="28" height="18" rx="1" />
+    <polyline points="2,6 16,17 30,6" />
+  </svg>
+)
+
+const IconRole = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="10" r="5" />
+    <path d="M4 26c0-6.627 5.373-12 12-12s12 5.373 12 12" />
+  </svg>
+)
+
+const sections = [
+  {
+    Icon:  IconTarget,
+    label: 'The Problem',
+    text:  "Cost, logistics, and time turn getting outside into a second job — so college students default to what's easy and bigger adventures stay stuck in the group chat.",
+  },
+  {
+    Icon:  IconInsight,
+    label: 'The Insight',
+    text:  "Dick's has an opportunity to make outdoor exploration the new default for college students by removing the friction entirely.",
+  },
+  {
+    Icon:  IconMessage,
+    label: 'Key Message',
+    text:  "Getting outside shouldn't feel like a second job. Dick's makes it so easy, it feels like you're getting away with something.",
+  },
+  {
+    Icon:  IconRole,
+    label: 'My Role',
+    text:  "Research design, Recollective survey build, audience analysis, brief writing, and campaign concepting — 33 BU undergrads, fully synthesized.",
+  },
+]
+
 export default function DicksPage() {
   return (
     <>
       {/* ── Header ───────────────────────────────────────────────────── */}
       <section
         style={{
-          padding:      '4rem 2rem 2rem',
+          padding:      '4rem 2rem 2.5rem',
           maxWidth:     'var(--max-width)',
           margin:       '0 auto',
           borderBottom: '1px solid var(--border)',
@@ -21,99 +81,97 @@ export default function DicksPage() {
         >
           ← Strategy
         </Link>
-        <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.5rem' }}>
-          Case 01 · Dick&apos;s Sporting Goods
-        </div>
-        <h1
-          className="text-display"
-          style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.75rem' }}
-        >
-          Escape Routes
-        </h1>
-        <p className="text-body" style={{ maxWidth: 560, color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-          Audience Research · Recollective Study · Brand Strategy
-        </p>
 
-        {/* Meta grid */}
-        <div className="grid-1px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
-          {[
-            { label: 'Client',    value: "Dick's Sporting Goods" },
-            { label: 'My Role',   value: 'Research · Brief writing · Creative concepting' },
-            { label: 'Method',    value: 'Recollective audience study — 33 BU undergrads' },
-            { label: 'Deliverable', value: 'Creative brief + campaign concept' },
-          ].map(m => (
-            <div key={m.label} className="grid-cell" style={{ padding: '1rem' }}>
-              <div className="text-label" style={{ color: 'var(--text-muted)', marginBottom: '0.25rem' }}>{m.label}</div>
-              <div className="text-body-sm" style={{ color: 'var(--text-primary)' }}>{m.value}</div>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+          <div>
+            <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.4rem' }}>
+              Case 01 · Dick&apos;s Sporting Goods
+            </div>
+            <h1
+              className="text-display"
+              style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}
+            >
+              Escape Routes
+            </h1>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+              {['Audience Research', 'Recollective Study', 'Brand Strategy'].map(t => (
+                <span
+                  key={t}
+                  className="text-label"
+                  style={{ background: 'var(--bg-secondary)', padding: '2px 8px', color: 'var(--text-muted)' }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Color block accent */}
+          <div
+            style={{
+              width:      120,
+              height:     80,
+              background: '#E8F5E2',
+              border:     '1px solid var(--border)',
+              flexShrink: 0,
+            }}
+          />
+        </div>
+      </section>
+
+      {/* ── Icon sections ────────────────────────────────────────────── */}
+      <section
+        style={{
+          maxWidth:     'var(--max-width)',
+          margin:       '0 auto',
+          padding:      '2.5rem 2rem',
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        <div
+          className="grid-1px"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}
+        >
+          {sections.map(({ Icon, label, text }) => (
+            <div key={label} className="grid-cell" style={{ padding: '1.25rem' }}>
+              <div style={{ color: 'var(--green)', marginBottom: '0.6rem' }}>
+                <Icon />
+              </div>
+              <div className="text-label" style={{ color: 'var(--text-muted)', marginBottom: '0.4rem' }}>
+                {label}
+              </div>
+              <p className="text-body" style={{ color: 'var(--text-secondary)' }}>
+                {text}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── Write-up ─────────────────────────────────────────────────── */}
+      {/* ── Pull quote ───────────────────────────────────────────────── */}
       <section
         style={{
-          maxWidth:     'var(--max-width)',
-          margin:       '0 auto',
-          padding:      '3rem 2rem',
+          maxWidth: 'var(--max-width)',
+          margin:   '0 auto',
+          padding:  '2.5rem 2rem',
           borderBottom: '1px solid var(--border)',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
-          <div>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>The Problem</div>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Dick&apos;s Sporting Goods wanted to reach Boston-area college students — a generation that genuinely wants the outdoors but keeps finding reasons not to go. We ran a Recollective audience study with 33 BU undergrads to understand what was actually stopping them.
-            </p>
-            <p className="text-body" style={{ color: 'var(--text-secondary)' }}>
-              What we found: it wasn&apos;t lack of interest. It was cost, logistics, and time. Getting outside required gear investments, planning, and coordination — turning what should be a mental reset into something that felt like a second job.
-            </p>
-          </div>
-          <div>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>The Insight</div>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Students default to what&apos;s easy — walking, running, nearby parks — while bigger adventures stay stuck in the group chat. The desire is there, but the financial and logistical barrier reframes outdoor recreation as a luxury instead of an accessible part of everyday life.
-            </p>
-            <p
-              style={{
-                fontFamily:  'var(--font-serif)',
-                fontSize:    '1.1rem',
-                color:       'var(--green)',
-                fontStyle:   'italic',
-                borderLeft:  '2px solid var(--green)',
-                paddingLeft: '1rem',
-              }}
-            >
-              Dick&apos;s has an opportunity to make outdoor adventures the new default for college students — by removing the logistical friction entirely.
-            </p>
-          </div>
-        </div>
-
-        {/* Brief summary */}
-        <div
+        <p
           style={{
-            marginTop:  '2rem',
-            background: 'var(--bg-secondary)',
-            border:     '1px solid var(--border)',
-            padding:    '1.5rem',
+            fontFamily: 'var(--font-serif)',
+            fontSize:   'clamp(1.25rem, 3vw, 1.75rem)',
+            color:      'var(--text-primary)',
+            maxWidth:   640,
+            lineHeight: 1.4,
+            fontStyle:  'italic',
           }}
         >
-          <div className="section-label" style={{ marginBottom: '1rem' }}>The Brief</div>
-          <div className="grid-1px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-            {[
-              { label: 'Goal',             value: "Establish Dick's as a community hub for outdoor experiences among Boston-area college students." },
-              { label: 'Target',           value: 'Adventurous Newcomers — 18–20 year olds new to Boston, looking for affordable, low-commitment activities.' },
-              { label: 'Consumer Problem', value: "Can't justify gear spending on hobbies they don't yet integrate into their routine. Going outside feels like work." },
-              { label: 'Desired Action',   value: 'Think: "I don\'t have to go out of my way to enjoy simple pleasures." Do: sign up for Escape Routes.' },
-              { label: 'Key Message',      value: "Getting outside shouldn't feel like a second job. Dick's makes it so easy, it feels like you're getting away with something." },
-            ].map(b => (
-              <div key={b.label} className="grid-cell" style={{ padding: '1rem' }}>
-                <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.25rem' }}>{b.label}</div>
-                <p className="text-body-sm" style={{ color: 'var(--text-secondary)' }}>{b.value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+          &ldquo;I don&apos;t have to go out of my way to enjoy simple pleasures.&rdquo;
+        </p>
+        <p className="text-label" style={{ color: 'var(--text-muted)', marginTop: '0.75rem' }}>
+          Desired consumer thought
+        </p>
       </section>
 
       {/* ── Embedded Deck ────────────────────────────────────────────── */}
@@ -121,17 +179,17 @@ export default function DicksPage() {
         style={{
           maxWidth: 'var(--max-width)',
           margin:   '0 auto',
-          padding:  '3rem 2rem',
+          padding:  '2.5rem 2rem',
         }}
       >
-        <div className="section-label" style={{ marginBottom: '1.5rem' }}>Full presentation</div>
+        <div className="section-label" style={{ marginBottom: '1.25rem' }}>Full presentation</div>
         <div
           style={{
-            position:    'relative',
-            width:       '100%',
-            paddingTop:  '56.25%',
-            background:  'var(--bg-secondary)',
-            border:      '1px solid var(--border)',
+            position:   'relative',
+            width:      '100%',
+            paddingTop: '56.25%',
+            background: 'var(--bg-secondary)',
+            border:     '1px solid var(--border)',
           }}
         >
           <iframe

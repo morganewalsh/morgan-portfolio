@@ -2,13 +2,73 @@
 
 import Link from 'next/link'
 
+const IconTarget = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="16" r="12" />
+    <circle cx="16" cy="16" r="6" />
+    <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none" />
+    <line x1="16" y1="4" x2="16" y2="1" />
+    <line x1="16" y1="28" x2="16" y2="31" />
+    <line x1="4" y1="16" x2="1" y2="16" />
+    <line x1="28" y1="16" x2="31" y2="16" />
+  </svg>
+)
+
+const IconInsight = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="13" r="8" />
+    <line x1="12" y1="24" x2="20" y2="24" />
+    <line x1="13" y1="27" x2="19" y2="27" />
+    <line x1="16" y1="5" x2="16" y2="2" />
+    <line x1="24" y1="8" x2="26" y2="6" />
+    <line x1="8" y1="8" x2="6" y2="6" />
+  </svg>
+)
+
+const IconMessage = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="2" y="6" width="28" height="18" rx="1" />
+    <polyline points="2,6 16,17 30,6" />
+  </svg>
+)
+
+const IconRole = () => (
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="16" cy="10" r="5" />
+    <path d="M4 26c0-6.627 5.373-12 12-12s12 5.373 12 12" />
+  </svg>
+)
+
+const sections = [
+  {
+    Icon:  IconTarget,
+    label: 'The Tension',
+    text:  "Valentine's Day is the Super Bowl of meaningless consumerism. Liquid Death is built on refusing to participate in exactly that.",
+  },
+  {
+    Icon:  IconInsight,
+    label: 'The Insight',
+    text:  "Only Liquid Death could own a Valentine's Day blood drive — because they're the only brand that would hijack the holiday for a genuinely good cause.",
+  },
+  {
+    Icon:  IconMessage,
+    label: 'Key Message',
+    text:  "This Valentine's Day goes out to all the bleeding hearts who know a day about love should be spent doing good.",
+  },
+  {
+    Icon:  IconRole,
+    label: 'My Role',
+    text:  "Concept development, brand voice, event design, limited edition can design, OOH creative, and campaign copy.",
+  },
+]
+
 export default function LiquidDeathPage() {
   return (
     <>
       {/* ── Header ───────────────────────────────────────────────────── */}
       <section
         style={{
-          padding:      '4rem 2rem 2rem',
+          padding:      '4rem 2rem 2.5rem',
           maxWidth:     'var(--max-width)',
           margin:       '0 auto',
           borderBottom: '1px solid var(--border)',
@@ -21,98 +81,95 @@ export default function LiquidDeathPage() {
         >
           ← Strategy
         </Link>
-        <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.5rem' }}>
-          Case 02 · Liquid Death
-        </div>
-        <h1
-          className="text-display"
-          style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.75rem' }}
-        >
-          Bleed for a Cause
-        </h1>
-        <p className="text-body" style={{ maxWidth: 560, color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-          Experiential Marketing · Brand Extension · Event Design
-        </p>
 
-        {/* Meta grid */}
-        <div className="grid-1px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
-          {[
-            { label: 'Client',      value: 'Liquid Death' },
-            { label: 'My Role',     value: 'Concept development · Brand voice · Event design · Campaign copy' },
-            { label: 'Format',      value: 'Experiential activation + limited edition product design' },
-            { label: 'Deliverable', value: 'Campaign concept, event design, can design, OOH' },
-          ].map(m => (
-            <div key={m.label} className="grid-cell" style={{ padding: '1rem' }}>
-              <div className="text-label" style={{ color: 'var(--text-muted)', marginBottom: '0.25rem' }}>{m.label}</div>
-              <div className="text-body-sm" style={{ color: 'var(--text-primary)' }}>{m.value}</div>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+          <div>
+            <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.4rem' }}>
+              Case 02 · Liquid Death
+            </div>
+            <h1
+              className="text-display"
+              style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}
+            >
+              Bleed for a Cause
+            </h1>
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+              {['Experiential Marketing', 'Brand Extension', 'Event Design'].map(t => (
+                <span
+                  key={t}
+                  className="text-label"
+                  style={{ background: 'var(--bg-secondary)', padding: '2px 8px', color: 'var(--text-muted)' }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div
+            style={{
+              width:      120,
+              height:     80,
+              background: '#FF69B4',
+              border:     '1px solid var(--border)',
+              flexShrink: 0,
+            }}
+          />
+        </div>
+      </section>
+
+      {/* ── Icon sections ────────────────────────────────────────────── */}
+      <section
+        style={{
+          maxWidth:     'var(--max-width)',
+          margin:       '0 auto',
+          padding:      '2.5rem 2rem',
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        <div
+          className="grid-1px"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}
+        >
+          {sections.map(({ Icon, label, text }) => (
+            <div key={label} className="grid-cell" style={{ padding: '1.25rem' }}>
+              <div style={{ color: 'var(--green)', marginBottom: '0.6rem' }}>
+                <Icon />
+              </div>
+              <div className="text-label" style={{ color: 'var(--text-muted)', marginBottom: '0.4rem' }}>
+                {label}
+              </div>
+              <p className="text-body" style={{ color: 'var(--text-secondary)' }}>
+                {text}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── Write-up ─────────────────────────────────────────────────── */}
+      {/* ── Pull quote ───────────────────────────────────────────────── */}
       <section
         style={{
           maxWidth:     'var(--max-width)',
           margin:       '0 auto',
-          padding:      '3rem 2rem',
+          padding:      '2.5rem 2rem',
           borderBottom: '1px solid var(--border)',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
-          <div>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>The Tension</div>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Liquid Death is a water brand that acts like it hates water. Its entire identity is built on refusing to participate in the performative wellness culture that surrounds hydration. Valentine&apos;s Day is the Super Bowl of meaningless consumerism — cheap flowers, hollow gestures, brands clambering to seem romantic.
-            </p>
-            <p className="text-body" style={{ color: 'var(--text-secondary)' }}>
-              The brief: design an experiential campaign that extends the brand without softening it. The instinct that killed every other idea: Liquid Death doesn&apos;t join Valentine&apos;s Day — it takes it over.
-            </p>
-          </div>
-          <div>
-            <div className="section-label" style={{ marginBottom: '1rem' }}>The Insight</div>
-            <p className="text-body" style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              A day about love should be spent doing good, not buying cheap chocolate. Liquid Death is a genuine bleeding-heart company — environmentally committed, anti-establishment, built for people who want to mean something.
-            </p>
-            <p
-              style={{
-                fontFamily:  'var(--font-serif)',
-                fontSize:    '1.1rem',
-                color:       'var(--green)',
-                fontStyle:   'italic',
-                borderLeft:  '2px solid var(--green)',
-                paddingLeft: '1rem',
-              }}
-            >
-              Only Liquid Death could own a Valentine&apos;s Day blood drive — because they&apos;re the only brand that would challenge the status quo of the holiday for a genuinely good cause.
-            </p>
-          </div>
-        </div>
-
-        {/* Campaign details */}
-        <div
+        <p
           style={{
-            marginTop:  '2rem',
-            background: 'var(--bg-secondary)',
-            border:     '1px solid var(--border)',
-            padding:    '1.5rem',
+            fontFamily: 'var(--font-serif)',
+            fontSize:   'clamp(1.25rem, 3vw, 1.75rem)',
+            color:      'var(--text-primary)',
+            maxWidth:   640,
+            lineHeight: 1.4,
+            fontStyle:  'italic',
           }}
         >
-          <div className="section-label" style={{ marginBottom: '1rem' }}>The Execution</div>
-          <div className="grid-1px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-            {[
-              { label: 'The Activation',  value: "Liquid Death takes over portable blood banks in major cities. A van dripping with blood, punctured by an arrow — sterile inside, rockstar outside." },
-              { label: 'The Product',     value: "Limited edition blood-type matched cans. Heart-shaped (like the organ) gummies. Tattoo-themed band-aids. Recycled aluminum pins." },
-              { label: 'The Hook',        value: "Post your pokes with #bleedforacause — because what's a good deed if Instagram doesn't know about it?" },
-              { label: 'Key Message',     value: "This Valentine's Day goes out to all the bleeding hearts who know a day about love should be spent doing good." },
-            ].map(b => (
-              <div key={b.label} className="grid-cell" style={{ padding: '1rem' }}>
-                <div className="text-label" style={{ color: 'var(--green)', marginBottom: '0.25rem' }}>{b.label}</div>
-                <p className="text-body-sm" style={{ color: 'var(--text-secondary)' }}>{b.value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+          &ldquo;Post your pokes with #bleedforacause — because what&apos;s a good deed if Instagram doesn&apos;t know about it?&rdquo;
+        </p>
+        <p className="text-label" style={{ color: 'var(--text-muted)', marginTop: '0.75rem' }}>
+          Campaign hook
+        </p>
       </section>
 
       {/* ── Embedded Deck ────────────────────────────────────────────── */}
@@ -120,10 +177,10 @@ export default function LiquidDeathPage() {
         style={{
           maxWidth: 'var(--max-width)',
           margin:   '0 auto',
-          padding:  '3rem 2rem',
+          padding:  '2.5rem 2rem',
         }}
       >
-        <div className="section-label" style={{ marginBottom: '1.5rem' }}>Full presentation</div>
+        <div className="section-label" style={{ marginBottom: '1.25rem' }}>Full presentation</div>
         <div
           style={{
             position:   'relative',

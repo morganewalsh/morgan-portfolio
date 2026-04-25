@@ -288,42 +288,17 @@ export default function Home() {
         <p className="text-body" style={{ maxWidth: 400, marginBottom: '1.25rem' }}>
           Looking for product design and data roles in Boston starting 
           summer 2026. I&apos;m interested in teams building things with a story.
-          </p>
+        </p>
 
-        {/* Simple mailto form — swap for a real form handler when ready */}
-        <div
-          style={{
-            display:   'flex',
-            maxWidth:  400,
-            border:    '1px solid var(--text-disabled)',
-          }}
-        >
-          <input
-            type="email"
-            placeholder="your@email.com"
-            style={{
-              flex:       1,
-              background: 'var(--bg-secondary)',
-              border:     'none',
-              color:      'var(--text-primary)',
-              fontFamily: 'var(--font-sans)',
-              fontSize:   '0.8125rem',
-              padding:    '0.625rem 0.875rem',
-              outline:    'none',
-            }}
-          />
-          <button className="btn btn-primary" style={{ borderRadius: 0 }}>
-            Send →
-          </button>
-        </div>
+        <a
+          href="mailto:mwalshe@bu.edu"
+          className="btn btn-primary"
+          style={{ borderRadius: 0, display: 'inline-block', padding: '0.625rem 1rem', textDecoration: 'none' }}
+          >
+          Send →
+        </a>
 
-        <div
-          style={{
-            display:   'flex',
-            gap:       '1.5rem',
-            marginTop: '1rem',
-          }}
-        >
+        <div style={{display: 'flex', gap: '1.5rem', marginTop: '1rem'}}>
           {[
             { label: 'mwalshe@bu.edu', href: 'mailto:mwalshe@bu.edu' },
             { label: 'LinkedIn',       href: 'https://linkedin.com/in/morganwalshe' },

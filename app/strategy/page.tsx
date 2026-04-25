@@ -1,40 +1,44 @@
+
 'use client'
-
+ 
 import Link from 'next/link'
-
+ 
 const briefs = [
   {
-    slug:    'dicks',
-    number:  '01',
-    brand:   "Dick's Sporting Goods",
-    title:   'Escape Routes',
-    tags:    ['Audience Research', 'Recollective Study', 'Brand Strategy'],
-    hook:    "When getting outside feels like a second job, no one goes outside. We found out why — then built the brief to fix it.",
-    bg:      '#2a3d2e',
-    accent:  'var(--green)',
+    slug:      'dicks',
+    number:    '01',
+    brand:     "Dick's Sporting Goods",
+    title:     'Escape Routes',
+    tags:      ['Audience Research', 'Recollective Study', 'Brand Strategy'],
+    hook:      "When getting outside feels like a second job, no one goes outside. Here's how Dick's can change the game.",
+    bg:        '#E8F5E2',
+    accent:    '#F4A261',
+    darkText:  true,
   },
   {
-    slug:    'liquid-death',
-    number:  '02',
-    brand:   'Liquid Death',
-    title:   'Bleed for a Cause',
-    tags:    ['Experiential Marketing', 'Brand Extension', 'Event Design'],
-    hook:    "A Valentine's Day blood drive in a van that looks like it's on tour with a rockstar. Only Liquid Death could own this.",
-    bg:      '#1a0a0a',
-    accent:  '#c0392b',
+    slug:      'liquid-death',
+    number:    '02',
+    brand:     'Liquid Death',
+    title:     'Bleed for a Cause',
+    tags:      ['Experiential Marketing', 'Brand Extension', 'Event Design'],
+    hook:      "Liquid death takes over Valentine's day with a blood drive. As a bleeding heart brand, only Liquid Death could own this.",
+    bg:        '#FF69B4',
+    accent:    '#FFFFFF',
+    darkText:  true,
   },
   {
-    slug:    'rold-gold',
-    number:  '03',
-    brand:   'Rold Gold',
-    title:   'True Crime Subculture',
-    tags:    ['Subculture Research', 'Consumer Insight', 'Creative Brief'],
-    hook:    "89% of weekly podcast listeners have binged true crime. We figured out what snack belongs in that ritual — and why.",
-    bg:      '#2d2000',
-    accent:  '#D4A843',
+    slug:      'rold-gold',
+    number:    '03',
+    brand:     'Rold Gold',
+    title:     'True Crime Subculture',
+    tags:      ['Subculture Research', 'Consumer Insight', 'Creative Brief'],
+    hook:      "True Crime is about more than morbid facination. We did a deep dive into what fuels podcast listeners ritual and made Rold Gold part of it.",
+    bg:        '#E8E0F0',
+    accent:    '#7B6B8A',
+    darkText:  true,
   },
 ]
-
+ 
 export default function StrategyPage() {
   return (
     <>
@@ -52,13 +56,13 @@ export default function StrategyPage() {
           className="text-display"
           style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}
         >
-          How I think before I build.
+          Welcome to strategy!
         </h1>
         <p className="text-body" style={{ maxWidth: 560, color: 'var(--text-secondary)' }}>
-          Three briefs. Three brands. One through line: the problem is never the problem you start with.
+          Here you'll find a few of my favroite projects that combine good research with better storytelling.
         </p>
       </section>
-
+ 
       {/* ── Strategist Skills ─────────────────────────────────────────── */}
       <section
         style={{
@@ -115,7 +119,7 @@ export default function StrategyPage() {
           ))}
         </div>
       </section>
-
+ 
       {/* ── Brief Cards ───────────────────────────────────────────────── */}
       <section
         style={{
@@ -168,7 +172,7 @@ export default function StrategyPage() {
                     style={{
                       fontFamily: 'var(--font-serif)',
                       fontSize:   '1.25rem',
-                      color:      'var(--text-primary)',
+                      color:      b.darkText ? '#161616' : 'var(--text-primary)',
                       marginTop:  '0.25rem',
                     }}
                   >
@@ -180,9 +184,9 @@ export default function StrategyPage() {
                         key={t}
                         className="text-label"
                         style={{
-                          background: 'rgba(255,255,255,0.08)',
+                          background: 'rgba(0,0,0,0.1)',
                           padding:    '2px 8px',
-                          color:      'var(--text-muted)',
+                          color:      b.darkText ? '#444' : 'var(--text-muted)',
                         }}
                       >
                         {t}
@@ -190,12 +194,12 @@ export default function StrategyPage() {
                     ))}
                   </div>
                 </div>
-
+ 
                 {/* Middle: hook */}
-                <p className="text-body" style={{ color: 'var(--text-secondary)', maxWidth: 480 }}>
+                <p className="text-body" style={{ color: b.darkText ? '#333' : 'var(--text-secondary)', maxWidth: 480 }}>
                   {b.hook}
                 </p>
-
+ 
                 {/* Right: arrow */}
                 <div
                   style={{
@@ -221,3 +225,4 @@ export default function StrategyPage() {
     </>
   )
 }
+ 

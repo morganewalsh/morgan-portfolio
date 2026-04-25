@@ -327,8 +327,8 @@ export default function Home() {
         >
           {[
             { label: 'mwalshe@bu.edu', href: 'mailto:mwalshe@bu.edu' },
-            { label: 'LinkedIn',       href: 'https://linkedin.com/in/morganwalsh' },
-            { label: 'GitHub',         href: 'https://github.com/morganwalsh'      },
+            { label: 'LinkedIn',       href: 'https://linkedin.com/in/morganwalshe' },
+            { label: 'GitHub',         href: 'https://github.com/morganewalsh'      },
           ].map(l => (
             <a
               key={l.label}

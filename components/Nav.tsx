@@ -71,13 +71,13 @@ export default function Nav() {
             height:          36,
             borderRadius:    '50%',
             background:      'var(--green)',
-            border:          `1.5px solid var(--gilt)`,
+            border:          `1.5px solid var(--border)`,
             display:         'flex',
             alignItems:      'center',
             justifyContent:  'center',
             cursor:          'pointer',
             transition:      'background 0.15s ease',
-            color:           'var(--gilt)',
+            color:           'var(--white)',
             fontSize:        '0.9rem',
           }}
           onMouseEnter={e => (e.currentTarget.style.background = 'var(--green-hover)')}

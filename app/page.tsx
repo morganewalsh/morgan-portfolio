@@ -287,8 +287,7 @@ export default function Home() {
         </h2>
         <p className="text-body" style={{ maxWidth: 400, marginBottom: '1.25rem' }}>
           Looking for product design and data roles in Boston starting 
-          summer 2026. I&apos;m interested in teams building things that are 
-          genuinely worth understanding.
+          summer 2026. I&apos;m interested in teams building things with a story.
           </p>
 
         {/* Simple mailto form — swap for a real form handler when ready */}

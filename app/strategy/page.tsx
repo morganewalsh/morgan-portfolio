@@ -10,8 +10,7 @@ const briefs = [
     blurb:   "When getting outside feels like a second job, no one goes outside. We ran a Recollective audience study with 33 BU undergrads to find out why — then built the campaign to fix it.",
     tags:    ['Audience Research', 'Recollective Study', 'Brand Strategy'],
     imgSide: 'left',
-    bg:      '#E8F5E2',
-    accent:  '#F4A261',
+    img:     '/dicks-campaign.png',
   },
   {
     slug:    'liquid-death',
@@ -20,8 +19,7 @@ const briefs = [
     blurb:   "A Valentine's Day blood drive in a van that looks like it's on tour with a rockstar. Liquid Death doesn't join the holiday — it hijacks it.",
     tags:    ['Experiential Marketing', 'Brand Extension', 'Event Design'],
     imgSide: 'right',
-    bg:      '#FF69B4',
-    accent:  '#ffffff',
+    img:     '/liquid-death-campaign.png',
   },
   {
     slug:    'rold-gold',
@@ -30,8 +28,7 @@ const briefs = [
     blurb:   "89% of weekly podcast listeners have binged true crime. We figured out what snack belongs in that ritual — and exactly why it has to be Rold Gold.",
     tags:    ['Subculture Research', 'Consumer Insight', 'Creative Brief'],
     imgSide: 'left',
-    bg:      '#E8E0F0',
-    accent:  '#7B6B8A',
+    img:     '/rold-gold-campaign.png',
   },
 ]
 
@@ -48,12 +45,6 @@ export default function StrategyPage() {
           borderBottom: '1px solid #e0e0e0',
         }}
       >
-        <p
-          className="text-label"
-          style={{ color: '#4D8059', marginBottom: '0.75rem' }}
-        >
-          THE STORY TO BE TOLD
-        </p>
         <h1
           style={{
             fontFamily:   'var(--font-serif)',
@@ -80,14 +71,8 @@ export default function StrategyPage() {
         </p>
       </section>
 
-      {/* ── Checkerboard Grid ─────────────────────────────────────────── */}
-      <section
-        style={{
-          maxWidth: 'var(--max-width)',
-          margin:   '0 auto',
-          padding:  '0 2rem 4rem',
-        }}
-      >
+      {/* ── Checkerboard Grid ────────────────────────────────────────── */}
+      <section style={{ maxWidth: 'var(--max-width)', margin: '0 auto' }}>
         {briefs.map((b) => (
           <div
             key={b.slug}
@@ -95,40 +80,37 @@ export default function StrategyPage() {
               display:             'grid',
               gridTemplateColumns: '1fr 1fr',
               borderBottom:        '1px solid #e0e0e0',
-              minHeight:           360,
+              minHeight:           420,
             }}
           >
-            {/* Image block */}
+            {/* ── Image block ── */}
             <div
               style={{
-                order:      b.imgSide === 'left' ? 1 : 2,
-                background: b.bg,
-                display:    'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight:  360,
-                padding:    '2rem',
+                order:    b.imgSide === 'left' ? 1 : 2,
+                overflow: 'hidden',
+                minHeight: 420,
               }}
             >
-              <div
+              <img
+                src={b.img}
+                alt={b.title}
                 style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize:   'clamp(1.5rem, 4vw, 2.5rem)',
-                  color:      b.accent === '#ffffff' ? '#161616' : b.accent,
-                  textAlign:  'center',
-                  lineHeight: 1.2,
-                  fontStyle:  'italic',
-                  opacity:    0.7,
+                  width:      '100%',
+                  height:     '100%',
+                  objectFit: 'cover',
+                  display:   'block',
                 }}
-              >
-                {b.title}
-              </div>
+              />
             </div>
 
-            {/* Text block */}
+            {/* ── Text block ── */}
             <Link
               href={`/strategy/${b.slug}`}
-              style={{ textDecoration: 'none', order: b.imgSide === 'left' ? 2 : 1 }}
+              style={{
+                textDecoration: 'none',
+                order:          b.imgSide === 'left' ? 2 : 1,
+                display:        'block',
+              }}
             >
               <div
                 style={{
@@ -140,6 +122,7 @@ export default function StrategyPage() {
                   background:     '#ffffff',
                   transition:     'background 0.15s ease',
                   cursor:         'pointer',
+                  boxSizing:      'border-box',
                 }}
                 onMouseEnter={e => (e.currentTarget.style.background = '#f7f7f7')}
                 onMouseLeave={e => (e.currentTarget.style.background = '#ffffff')}
@@ -153,22 +136,24 @@ export default function StrategyPage() {
                 <h2
                   style={{
                     fontFamily:   'var(--font-serif)',
-                    fontSize:     '1.5rem',
+                    fontSize:     '1.75rem',
                     color:        '#161616',
                     marginBottom: '0.75rem',
                     fontWeight:   400,
+                    lineHeight:   1.2,
                   }}
                 >
                   {b.title}
                 </h2>
                 <p
                   style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize:   '0.875rem',
-                    fontWeight: 300,
-                    lineHeight: 1.75,
-                    color:      '#555',
+                    fontFamily:   'var(--font-sans)',
+                    fontSize:     '0.875rem',
+                    fontWeight:   300,
+                    lineHeight:   1.75,
+                    color:        '#555',
                     marginBottom: '1.25rem',
+                    maxWidth:     400,
                   }}
                 >
                   {b.blurb}

@@ -52,7 +52,7 @@ export default function StrategyPage() {
           className="text-label"
           style={{ color: '#4D8059', marginBottom: '0.75rem' }}
         >
-          Strategy
+          THE STORY TO BE TOLD
         </p>
         <h1
           style={{
@@ -64,7 +64,7 @@ export default function StrategyPage() {
             lineHeight:   1.2,
           }}
         >
-          Why do people do what they do?
+          Strategy
         </h1>
         <p
           style={{

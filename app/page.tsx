@@ -5,29 +5,29 @@ import Link from 'next/link'
 import ProjectCard from '@/components/ProjectCard'
 
 const skills = [
-  { cat: 'Data',     items: 'Python · SQL · Rust · Power BI · geospatial' },
+  { cat: 'Data',     items: 'Python · SQL · Rust · MongoDB · Java' },
   { cat: 'Design',   items: 'Figma · Framer · UX research · Adobe CC'     },
-  { cat: 'Strategy', items: 'Brand · market research · campaign · comms'  },
-  { cat: 'Language', items: 'Spanish'                                      },
+  { cat: 'Strategy', items: 'Brand Campaigns & Market research'  },
+  { cat: 'Language', items: 'Spanish & Elementary Arabic'                                      },
 ]
 
 const projects = [
   {
     tag:   'Data',
     title: 'Boston accident trends',
-    desc:  'Rust-powered analysis of traffic incident data — where, when, and who bears the cost.',
+    desc:  'Rust-powered analysis of traffic incident data.',
     href:  '/data',
   },
   {
     tag:   'UX / Product',
     title: 'Pack app',
-    desc:  'Product design for a collaborative trip-packing tool — research, flows, prototype.',
+    desc:  'Product design for a collaborative trip-packing tool.',
     href:  '/data',
   },
   {
     tag:   'Strategy',
     title: 'Liquid Death campaign',
-    desc:  'Experiential marketing strategy — research, brief, and full campaign execution.',
+    desc:  'Experiential marketing strategy.',
     href:  '/strategy',
   },
   {
@@ -39,9 +39,9 @@ const projects = [
 ]
 
 const facts = [
-  'BU Run Club — Social Chair',
-  'Code for Boston member',
-  'Guitarist',
+  'BU Run Club Social Chair',
+  'Code for Boston Member',
+  'Bedroom Guitarist',
 ]
 
 const workLinks = [
@@ -139,7 +139,7 @@ export default function Home() {
             Boston, MA · BU Advertising + Data Science &apos;26
           </p>
           <h1 className="text-display" style={{ maxWidth: 520, marginBottom: '1rem' }}>
-            I grew up in Rhode Island, where <em>car</em> sounds like <em>cah</em>. Froma young age speech
+            I grew up in Rhode Island, where <em>car</em> sounds like <em>cah</em>. From a young age speech
             therapy taught me early that how you communicate matters as much as what
             you&apos;re saying.
           </h1>

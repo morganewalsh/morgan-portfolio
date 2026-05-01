@@ -46,18 +46,12 @@ export default function Nav() {
       }}
     >
       {/* Wordmark */}
-      <Link
-        href="/"
-        style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize:   '0.875rem',
-          fontWeight: 400,
-          color:      'var(--text-primary)',
-          letterSpacing: '0.01em',
-        }}
-      >
-        Morgan{' '}
-        <span style={{ color: 'var(--green)', fontWeight: 500 }}>Walsh</span>
+      <Link href="/">
+       <img
+       src="/mew-monogram.png"
+       alt="Morgan Walsh"
+       style={{ height: 32, width: 'auto', display: 'block' }}
+       />
       </Link>
 
       {/* Star nav */}

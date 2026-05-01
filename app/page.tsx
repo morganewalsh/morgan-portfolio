@@ -5,9 +5,9 @@ import Link from 'next/link'
 import ProjectCard from '@/components/ProjectCard'
 
 const skills = [
-  { cat: 'Data',     items: 'Python · SQL · Rust · Power BI · geospatial' },
+  { cat: 'Data',     items: 'Python · SQL · Rust · Mongo DB · Java' },
   { cat: 'Design',   items: 'Figma · Framer · UX research · Adobe CC'     },
-  { cat: 'Strategy', items: 'Brand · market research · campaign · comms'  },
+  { cat: 'Strategy', items: 'Experiential Campaigns· Market Research · Social Campaigns'  },
   { cat: 'Language', items: 'Spanish'  },
 ]
 

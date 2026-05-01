@@ -4,230 +4,209 @@ import Link from 'next/link'
 
 const briefs = [
   {
-    slug:     'dicks',
-    number:   '01',
-    brand:    "Dick's Sporting Goods",
-    title:    'Escape Routes',
-    tags:     ['Audience Research', 'Recollective Study', 'Brand Strategy'],
-    hook:     "When getting outside feels like a second job, no one goes outside. We found out why — then built the brief to fix it.",
-    bg:       '#E8F5E2',
-    accent:   '#F4A261',
-    darkText: true,
+    slug:    'dicks',
+    brand:   "Dick's Sporting Goods",
+    title:   'Escape Routes',
+    blurb:   "When getting outside feels like a second job, no one goes outside. We ran a Recollective audience study with 33 BU undergrads to find out why — then built the campaign to fix it.",
+    tags:    ['Audience Research', 'Recollective Study', 'Brand Strategy'],
+    imgSide: 'left',
+    bg:      '#E8F5E2',
+    accent:  '#F4A261',
   },
   {
-    slug:     'liquid-death',
-    number:   '02',
-    brand:    'Liquid Death',
-    title:    'Bleed for a Cause',
-    tags:     ['Experiential Marketing', 'Brand Extension', 'Event Design'],
-    hook:     "A Valentine's Day blood drive in a van that looks like it's on tour with a rockstar. Only Liquid Death could own this.",
-    bg:       '#FF69B4',
-    accent:   '#FFFFFF',
-    darkText: true,
+    slug:    'liquid-death',
+    brand:   'Liquid Death',
+    title:   'Bleed for a Cause',
+    blurb:   "A Valentine's Day blood drive in a van that looks like it's on tour with a rockstar. Liquid Death doesn't join the holiday — it hijacks it.",
+    tags:    ['Experiential Marketing', 'Brand Extension', 'Event Design'],
+    imgSide: 'right',
+    bg:      '#FF69B4',
+    accent:  '#ffffff',
   },
   {
-    slug:     'rold-gold',
-    number:   '03',
-    brand:    'Rold Gold',
-    title:    'True Crime Subculture',
-    tags:     ['Subculture Research', 'Consumer Insight', 'Creative Brief'],
-    hook:     "89% of weekly podcast listeners have binged true crime. We figured out what snack belongs in that ritual — and why.",
-    bg:       '#E8E0F0',
-    accent:   '#7B6B8A',
-    darkText: true,
-  },
-]
-
-const skills = [
-  {
-    glyph: '26.2',
-    title: 'In it For the Long Haul',
-    body:  "I ran a marathon in Vermont in the summer with pneumonia and finished. I don't quit when the problem gets uncomfortable — I get more interested.",
-  },
-  {
-    glyph: '01',
-    title: 'Bilingual: Data + Human',
-    body:  "I build the charts and write the story that makes them matter. Beautiful visualizations alone convince no one of anything.",
-  },
-  {
-    glyph: '→',
-    title: 'I Process Slowly, on Purpose',
-    body:  "I sit with a brief longer than feels comfortable — until I understand what's actually being asked, not just what was said.",
+    slug:    'rold-gold',
+    brand:   'Rold Gold',
+    title:   'True Crime Subculture',
+    blurb:   "89% of weekly podcast listeners have binged true crime. We figured out what snack belongs in that ritual — and exactly why it has to be Rold Gold.",
+    tags:    ['Subculture Research', 'Consumer Insight', 'Creative Brief'],
+    imgSide: 'left',
+    bg:      '#E8E0F0',
+    accent:  '#7B6B8A',
   },
 ]
 
 export default function StrategyPage() {
   return (
-    <>
+    <div style={{ background: '#ffffff', minHeight: '100vh' }}>
+
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          padding:      '4rem 2rem 2.5rem',
+          padding:      '4rem 2rem 3rem',
           maxWidth:     'var(--max-width)',
           margin:       '0 auto',
-          borderBottom: '1px solid var(--border)',
+          borderBottom: '1px solid #e0e0e0',
         }}
       >
-        <div className="section-label">Strategy</div>
-        <h1
-          className="text-display"
-          style={{ fontFamily: 'var(--font-serif)', marginBottom: '0.5rem', maxWidth: 560 }}
+        <p
+          className="text-label"
+          style={{ color: '#4D8059', marginBottom: '0.75rem' }}
         >
-          How I think before I build.
+          Strategy
+        </p>
+        <h1
+          style={{
+            fontFamily:   'var(--font-serif)',
+            fontSize:     'clamp(2rem, 5vw, 3rem)',
+            color:        '#161616',
+            marginBottom: '1.25rem',
+            maxWidth:     640,
+            lineHeight:   1.2,
+          }}
+        >
+          Why do people do what they do?
         </h1>
-        <p className="text-body" style={{ maxWidth: 480, color: 'var(--text-secondary)' }}>
-          Three briefs. Three brands. One through line: the problem is never the problem you start with.
+        <p
+          style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize:   '1rem',
+            fontWeight: 300,
+            lineHeight: 1.75,
+            color:      '#444',
+            maxWidth:   560,
+          }}
+        >
+          One of my most prized birthday gifts was &ldquo;The Big Book of Questions and Answers&rdquo;; my parents couldn&apos;t keep up with how many I asked. Now I make it my job to find out why people do what they do.
         </p>
       </section>
 
-      {/* ── Skills ───────────────────────────────────────────────────── */}
-      <section
-        style={{
-          maxWidth:     'var(--max-width)',
-          margin:       '0 auto',
-          padding:      '2.5rem 2rem',
-          borderBottom: '1px solid var(--border)',
-        }}
-      >
-        <div className="section-label">What makes me tick</div>
-        <div
-          className="grid-1px"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', marginTop: '1.25rem' }}
-        >
-          {skills.map(s => (
-            <div key={s.title} className="grid-cell" style={{ padding: '1.5rem' }}>
-              <div
-                style={{
-                  fontFamily:   'var(--font-serif)',
-                  fontSize:     '1.75rem',
-                  color:        'var(--green)',
-                  marginBottom: '0.75rem',
-                  lineHeight:   1,
-                }}
-              >
-                {s.glyph}
-              </div>
-              <p
-                style={{
-                  fontFamily:   'var(--font-serif)',
-                  fontSize:     '1rem',
-                  color:        'var(--text-primary)',
-                  marginBottom: '0.5rem',
-                }}
-              >
-                {s.title}
-              </p>
-              <p className="text-body" style={{ color: 'var(--text-secondary)' }}>
-                {s.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Brief Cards ───────────────────────────────────────────────── */}
+      {/* ── Checkerboard Grid ─────────────────────────────────────────── */}
       <section
         style={{
           maxWidth: 'var(--max-width)',
           margin:   '0 auto',
-          padding:  '2.5rem 2rem',
+          padding:  '0 2rem 4rem',
         }}
       >
-        <div className="section-label">Selected briefs</div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 1, marginTop: '1.25rem' }}>
-          {briefs.map(b => (
-            <Link
-              key={b.slug}
-              href={`/strategy/${b.slug}`}
-              style={{ textDecoration: 'none', display: 'block' }}
+        {briefs.map((b) => (
+          <div
+            key={b.slug}
+            style={{
+              display:             'grid',
+              gridTemplateColumns: '1fr 1fr',
+              borderBottom:        '1px solid #e0e0e0',
+              minHeight:           360,
+            }}
+          >
+            {/* Image block */}
+            <div
+              style={{
+                order:      b.imgSide === 'left' ? 1 : 2,
+                background: b.bg,
+                display:    'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight:  360,
+                padding:    '2rem',
+              }}
             >
               <div
                 style={{
-                  display:             'grid',
-                  gridTemplateColumns: '200px 1fr auto',
-                  alignItems:          'center',
-                  gap:                 '2rem',
-                  background:          b.bg,
-                  border:              '1px solid var(--border)',
-                  padding:             '2rem',
-                  transition:          'filter 0.15s ease',
-                  cursor:              'pointer',
+                  fontFamily: 'var(--font-serif)',
+                  fontSize:   'clamp(1.5rem, 4vw, 2.5rem)',
+                  color:      b.accent === '#ffffff' ? '#161616' : b.accent,
+                  textAlign:  'center',
+                  lineHeight: 1.2,
+                  fontStyle:  'italic',
+                  opacity:    0.7,
                 }}
-                onMouseEnter={e => (e.currentTarget.style.filter = 'brightness(0.93)')}
-                onMouseLeave={e => (e.currentTarget.style.filter = 'brightness(1)')}
               >
-                {/* Left */}
-                <div>
-                  <div
-                    style={{
-                      fontFamily:   'var(--font-serif)',
-                      fontSize:     '2.5rem',
-                      color:        b.darkText ? 'rgba(0,0,0,0.2)' : b.accent,
-                      lineHeight:   1,
-                      marginBottom: '0.5rem',
-                    }}
-                  >
-                    {b.number}
-                  </div>
-                  <div className="text-label" style={{ color: b.accent, marginBottom: '0.2rem' }}>
-                    {b.brand}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize:   '1.1rem',
-                      color:      b.darkText ? '#161616' : 'var(--text-primary)',
-                    }}
-                  >
-                    {b.title}
-                  </div>
-                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.6rem' }}>
-                    {b.tags.map(t => (
-                      <span
-                        key={t}
-                        className="text-label"
-                        style={{
-                          background: 'rgba(0,0,0,0.08)',
-                          padding:    '2px 7px',
-                          color:      b.darkText ? '#555' : 'var(--text-muted)',
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                {b.title}
+              </div>
+            </div>
 
-                {/* Hook */}
+            {/* Text block */}
+            <Link
+              href={`/strategy/${b.slug}`}
+              style={{ textDecoration: 'none', order: b.imgSide === 'left' ? 2 : 1 }}
+            >
+              <div
+                style={{
+                  padding:        '3rem 2.5rem',
+                  display:        'flex',
+                  flexDirection:  'column',
+                  justifyContent: 'center',
+                  height:         '100%',
+                  background:     '#ffffff',
+                  transition:     'background 0.15s ease',
+                  cursor:         'pointer',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#f7f7f7')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#ffffff')}
+              >
                 <p
-                  className="text-body"
-                  style={{ color: b.darkText ? '#333' : 'var(--text-secondary)', maxWidth: 420 }}
+                  className="text-label"
+                  style={{ color: '#4D8059', marginBottom: '0.4rem' }}
                 >
-                  {b.hook}
+                  {b.brand}
                 </p>
-
-                {/* Arrow */}
-                <div
+                <h2
                   style={{
-                    width:          36,
-                    height:         36,
-                    border:         `1px solid ${b.darkText ? 'rgba(0,0,0,0.3)' : b.accent}`,
-                    display:        'flex',
-                    alignItems:     'center',
-                    justifyContent: 'center',
-                    color:          b.darkText ? '#333' : b.accent,
-                    fontSize:       '1rem',
-                    flexShrink:     0,
+                    fontFamily:   'var(--font-serif)',
+                    fontSize:     '1.5rem',
+                    color:        '#161616',
+                    marginBottom: '0.75rem',
+                    fontWeight:   400,
                   }}
                 >
-                  →
+                  {b.title}
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize:   '0.875rem',
+                    fontWeight: 300,
+                    lineHeight: 1.75,
+                    color:      '#555',
+                    marginBottom: '1.25rem',
+                  }}
+                >
+                  {b.blurb}
+                </p>
+                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+                  {b.tags.map(t => (
+                    <span
+                      key={t}
+                      className="text-label"
+                      style={{
+                        background: '#f0f0f0',
+                        padding:    '2px 8px',
+                        color:      '#888',
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div
+                  style={{
+                    display:    'flex',
+                    alignItems: 'center',
+                    gap:        '0.4rem',
+                    color:      '#4D8059',
+                    fontSize:   '0.8125rem',
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 400,
+                  }}
+                >
+                  View case study →
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
-    </>
+    </div>
   )
 }
  

@@ -72,8 +72,8 @@ export default function Home() {
             className="text-display"
             style={{ maxWidth: 520, marginBottom: '1rem' }}
           >
-            I grew up where <em>car</em> sounds like <em>cah</em> — speech
-            therapy taught me that how you communicate matters as much as what
+            I grew up in Rhode Island, where <em>car</em> sounds like <em>cah</em>. From an early age 
+            speech therapy taught me that how you communicate matters as much as what
             you&apos;re saying.
           </h1>
 
